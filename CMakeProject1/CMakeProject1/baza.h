@@ -13,5 +13,5 @@ public:
 
 private:
 	std::vector<Car> carVec;
-	std::vector<Car> availibleCarVec;
+	std::vector<Car> availableCarVec;
 };
