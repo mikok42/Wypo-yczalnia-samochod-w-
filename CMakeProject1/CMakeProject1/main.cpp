@@ -1,5 +1,5 @@
 ﻿
-#include "CMakeProject1.h"
+#include "head.h"
 
 using namespace std;
 
