@@ -15,3 +15,13 @@ Car::Car(const std::string manufacterer_,
 
 	std::cout << "wolkswagen kurwo" << std::endl;
 }
+
+void Car::showOff()
+{
+	std::cout << "manufacterer: " << manufacterer << std::endl;
+	std::cout << "model: " << model << std::endl;
+	std::cout << "passenger capacity: " << passengerCapacity << std::endl;
+	std::cout << "trunk capacity: " << trunkCapacity << "l" << std::endl;
+	std::cout << "price per day: " << pricePerDay << "zl" << std::endl;
+
+}

@@ -8,6 +8,8 @@ public:
 		const int passengerCapacity_,
 		const int trunkCapacity_,
 		const int pricePerDay_);
+	void showOff();
+
 private:
 	const std::string manufacterer;
 	const std::string model;
