@@ -1,15 +1,17 @@
 #include<iostream>
 #include<vector>
-#include<car.h>
+#include "car.h"
 
 class Baza
 {
 public:
-	Baza();
 
-	Add();
-	Rent();
-	Present();
+	void Add(Car car);
+	void Rent(Car car);
+	void Return(Car car);
+	void Present();
+
 private:
 	std::vector<Car> carVec;
+	std::vector<Car> availibleCarVec;
 };

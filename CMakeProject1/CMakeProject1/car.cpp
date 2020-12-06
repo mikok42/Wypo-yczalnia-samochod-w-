@@ -13,7 +13,7 @@ Car::Car(const std::string manufacterer_,
 {
 	rented = false;
 
-	std::cout << "wolkswagen kurwo" << std::endl;
+	std::cout << "car created" << std::endl;
 }
 
 void Car::showOff()
