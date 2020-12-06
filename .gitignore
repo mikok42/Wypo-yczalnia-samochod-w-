@@ -338,3 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/CMakeProject1/out/build/x64-Debug (domyślnie)
