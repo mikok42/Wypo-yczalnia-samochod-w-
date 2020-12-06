@@ -1,6 +1,6 @@
 ﻿
 #include "head.h"
-#include "car.cpp"
+#include "car.h"
 
 using namespace std;
 
@@ -11,6 +11,8 @@ int main()
 	
 
 	Car furka(static_cast<std::string>("mercedes") , static_cast<std::string>("c350"), 5, 150, 69 );
+
+
 	return 0;
 
 }
