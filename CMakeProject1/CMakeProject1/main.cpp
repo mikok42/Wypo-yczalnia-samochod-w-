@@ -5,6 +5,6 @@ using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+    cout << "Hello CMake." << endl;
 	return 0;
 }
