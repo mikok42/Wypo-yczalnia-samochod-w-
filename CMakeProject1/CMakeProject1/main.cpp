@@ -1,10 +1,10 @@
 ﻿
-#include "CMakeProject1.h"
+#include "head.h"
 
 using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+    cout << "Hello CMake." << endl;
 	return 0;
 }
