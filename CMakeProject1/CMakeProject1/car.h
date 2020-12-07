@@ -1,21 +1,29 @@
+#pragma once
+
 #include <string>
+
 
 class  Car
 {
 public:
-	Car(const std::string manufacterer_,
-		const std::string model_,
-		const int passengerCapacity_,
-		const int trunkCapacity_,
-		const int pricePerDay_);
+	Car( std::string manufacterer_,
+		 std::string model_,
+		 int passengerCapacity_,
+		 int trunkCapacity_,
+		 int pricePerDay_);
+	//Car(Car& carToCopy);
 	void showOff();
+	
+	Car& operator= (const Car& car);
+
+	friend bool compare(Car candidate, Car target);
 
 private:
-	const std::string manufacterer;
-	const std::string model;
-	const int passengerCapacity;
-	const int trunkCapacity;
-	const int pricePerDay;
+	 std::string manufacterer;
+	 std::string model;
+	 int passengerCapacity;
+	 int trunkCapacity;
+	 int pricePerDay;
 
 	bool rented;
 };
