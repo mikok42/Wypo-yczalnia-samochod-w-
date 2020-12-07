@@ -1,4 +1,4 @@
-
+#include <iostream>
 #include "baza.h"
 #include "compare.h"
 /*
@@ -20,7 +20,7 @@ int Baza::Find(std::vector<Car> whereToLook, Car car)
 			break;
 		}
 	}
-	throw InvalidArguments("car not found");
+	return 2147483647;
 }
 
 void Baza::Add(Car car)
@@ -32,14 +32,23 @@ void Baza::Add(Car car)
 void Baza::Rent(Car car)
 {
 	int index, lastIndex;
+	
 	index = Find(availableCarVec, car);
 
-	lastIndex = availableCarVec.size() - 1;
+	if (index == 2147483647)
+	{
+		std::cout << "car not found" << std::endl;
+	}
+	else {
+		lastIndex = availableCarVec.size() - 1;
 
-	std::swap(availableCarVec[index], availableCarVec[lastIndex]);
+		std::swap(availableCarVec[index], availableCarVec[lastIndex]);
 
-	availableCarVec.pop_back();
-	rentedCarVec.push_back(car);
+		availableCarVec.pop_back();
+		rentedCarVec.push_back(car);
+	}
+
+	
 }
 
 void Baza::Return(Car car)
