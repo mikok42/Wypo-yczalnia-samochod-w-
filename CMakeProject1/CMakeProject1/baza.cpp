@@ -56,25 +56,44 @@ void Baza::Return(Car car)
 	int index, lastIndex;
 	index = Find(rentedCarVec, car);
 
-	lastIndex = rentedCarVec.size() - 1;
 
-	std::swap(availableCarVec[index], availableCarVec[lastIndex]);
+	if (index == 2147483647)
+	{
+		std::cout << "car not found" << std::endl;
+	}
+	else {
+		lastIndex = rentedCarVec.size() - 1;
 
-	rentedCarVec.pop_back();
-	availableCarVec.push_back(car);
+		std::swap(availableCarVec[index], availableCarVec[lastIndex]);
 
+		rentedCarVec.pop_back();
+		availableCarVec.push_back(car);
+
+	}
+
+	
 }
 
 void Baza::Remove(std::vector<Car> removeFrom, Car car)
 {
+
+
 	int index, lastIndex;
 	index = Find(removeFrom, car);
 
-	lastIndex = removeFrom.size() - 1;
+	if (index == 2147483647)
+	{
+		std::cout << "car not found" << std::endl;
+	}
+	else {
+		lastIndex = removeFrom.size() - 1;
 
-	std::swap(removeFrom[index], removeFrom[lastIndex]);
+		std::swap(removeFrom[index], removeFrom[lastIndex]);
 
-	removeFrom.pop_back();
+		removeFrom.pop_back();
+	}
+
+	
 }
 
 void Baza::Present()
