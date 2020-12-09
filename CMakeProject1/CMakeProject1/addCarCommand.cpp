@@ -2,6 +2,8 @@
 #include "deleteCarCommand.h"
 #include <iostream>
 #include "exceptions.h"
+#include "baza.h"
+#include <cstdlib>
 
 using namespace std;
 
@@ -16,10 +18,43 @@ bool AddCarCommand::isForMe(std::string command) {
 void AddCarCommand::executeMe(string command) {
 	vector<string> arguments = devideCommandForAguments(command);
 
-	if(arguments.size() < 2)
-		throw InvalidArguments("No arguments");
+	if(arguments.size() < NUMBER_OF_ARGUMENTS)
+		throw InvalidArguments("Not enough arguments");
 
-	for(int i = 1; i < arguments.size(); i++)
-		cout << arguments[i] << " ";
-	cout << endl;
+	commandArguments = arguments;
+}
+
+Car AddCarCommand::generateCar() {
+	string manufacterer = getManufacterer();
+	string model = getModel();
+	int passengerCapacity = getPassengerCapacity();
+	int trunkCapacity = getTrunkCapacity();
+	int pricePerDay = getPricePerDay();
+	return Car{manufacterer, model, passengerCapacity, trunkCapacity, pricePerDay};
+}
+
+string AddCarCommand::getManufacterer() {
+	return commandArguments[MANUFACTERER_INDEX];
+}
+
+string AddCarCommand::getModel() {
+	return commandArguments[MODEL_INDEX];
+}
+
+int AddCarCommand::getPassengerCapacity() {
+	string temp = commandArguments[PASSENGER_CAPACITY_INDEX];
+	int result = atoi(temp.c_str());
+	return result;
+}
+
+int AddCarCommand::getTrunkCapacity() {
+	string temp = commandArguments[TRUNK_CAPACITY_INDEX];
+	int result = atoi(temp.c_str());
+	return result;
+}
+
+int AddCarCommand::getPricePerDay() {
+	string temp = commandArguments[PRICE_PER_DAY_INDEX];
+	int result = atoi(temp.c_str());
+	return result;
 }
