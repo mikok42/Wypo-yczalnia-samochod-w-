@@ -1,5 +1,7 @@
-
+#include <string>
 #include "baza.h"
+
+using namespace std;
 
 void Baza::Add(Car car)
 {
@@ -23,4 +25,18 @@ void Baza::Present()
 		availableCarVec[i].showOff();
 	}
 }
+
+int Baza::Search(Car& car)
+{
+    int res = 0;
+
+    for (const auto& elem : availableCarVec)
+    {
+        if (car == elem)
+            res++;
+    }
+
+    return res;
+}
+
 
