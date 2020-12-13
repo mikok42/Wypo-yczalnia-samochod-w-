@@ -1,3 +1,5 @@
+
+#include <string>
 #include <iostream>
 #include "baza.h"
 #include "compare.h"
@@ -10,7 +12,12 @@ Baza::Baza()
 }
 */
 
+using namespace std;
+
+void Baza::Add(Car car)
+
 int Baza::Find(std::vector<Car> whereToLook, Car car)
+
 {
 	for (int i = 0; i < whereToLook.size(); i++)
 	{
@@ -103,4 +110,18 @@ void Baza::Present()
 		availableCarVec[i].showOff();
 	}
 }
+
+int Baza::Search(Car& car)
+{
+    int res = 0;
+
+    for (const auto& elem : availableCarVec)
+    {
+        if (car == elem)
+            res++;
+    }
+
+    return res;
+}
+
 

@@ -3,6 +3,7 @@
 #include <string>
 
 
+
 class  Car
 {
 public:
@@ -11,12 +12,14 @@ public:
 		 int passengerCapacity_,
 		 int trunkCapacity_,
 		 int pricePerDay_);
-	//Car(Car& carToCopy);
+
 	void showOff();
 	
 	Car& operator= (const Car& car);
 
 	friend bool compare(Car candidate, Car target);
+
+    bool operator== (const Car& rhs);
 
 private:
 	 std::string manufacterer;

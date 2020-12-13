@@ -1,12 +1,15 @@
-#include "car.h"
 #include <iostream>
+#include "car.h"
 
-Car::Car( std::string manufacterer_,
-	 std::string model_,
-	 int passengerCapacity_,
-	 int trunkCapacity_,
-	 int pricePerDay_): manufacterer(manufacterer_),
-	model(model_),
+
+Car::Car(const std::string& manufacterer_,
+	const std::string& model_,
+	int passengerCapacity_,
+	int trunkCapacity_,
+	int pricePerDay_):
+	manufacterer (std::move(manufacterer_)),
+	model (std::move(model_)),
+
 	passengerCapacity(passengerCapacity_),
 	trunkCapacity(trunkCapacity_),
 	pricePerDay(pricePerDay_)
@@ -37,30 +40,13 @@ void Car::showOff()
 
 }
 
-/*
-bool Car::compare(Car &candidate)
+
+bool Car::operator== (const Car& rhs)
 {
-	if (candidate.manufacterer != manufacterer)
-	{
-		return 0;
-	}
-	else if (candidate.model != model)
-	{
-		return 0;
-	}
-	else if (candidate.passengerCapacity != passengerCapacity)
-	{
-		return 0;
-	}
-	else if (candidate.trunkCapacity != trunkCapacity)
-	{
-		return 0;
-	}
-	else if (candidate.pricePerDay != pricePerDay)
-	{
-		return 0;
-	}
-	else return 1;
+    return (manufacterer == rhs.manufacterer &&
+    model == rhs.manufacterer &&
+    passengerCapacity == rhs.passengerCapacity &&
+    trunkCapacity == rhs.trunkCapacity &&
+    pricePerDay == pricePerDay);
 }
 
-*/

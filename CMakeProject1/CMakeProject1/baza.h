@@ -1,6 +1,7 @@
 #pragma once
 
-#include<vector>
+#include <iostream>
+#include <vector>
 #include "car.h"
 #include "exceptions.h"
 
@@ -13,10 +14,14 @@ public:
 	void Add(Car car);
 	void Rent(Car car);
 	void Return(Car car);
+  void Present();
+  
+	int Search(Car& car);
+
 	void Remove(std::vector<Car> removeFrom, Car car);
-	void Present();
 
 	int Find(std::vector<Car> whereToLook, Car car);
+
 
 
 private:
