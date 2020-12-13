@@ -1,6 +1,7 @@
 #include <iostream>
 #include "car.h"
 
+
 Car::Car(const std::string& manufacterer_,
 	const std::string& model_,
 	int passengerCapacity_,
@@ -8,6 +9,7 @@ Car::Car(const std::string& manufacterer_,
 	int pricePerDay_):
 	manufacterer (std::move(manufacterer_)),
 	model (std::move(model_)),
+
 	passengerCapacity(passengerCapacity_),
 	trunkCapacity(trunkCapacity_),
 	pricePerDay(pricePerDay_)
@@ -15,6 +17,17 @@ Car::Car(const std::string& manufacterer_,
 	rented = false;
 
 	std::cout << "car created" << std::endl;
+}
+
+Car& Car::operator=(const Car& car)
+{
+	manufacterer = car.manufacterer;
+	model = car.model;
+	passengerCapacity = car.passengerCapacity;
+	trunkCapacity = car.trunkCapacity;
+	pricePerDay = car.pricePerDay;
+
+	return *this;
 }
 
 void Car::showOff()
@@ -27,6 +40,7 @@ void Car::showOff()
 
 }
 
+
 bool Car::operator== (const Car& rhs)
 {
     return (manufacterer == rhs.manufacterer &&
@@ -35,3 +49,4 @@ bool Car::operator== (const Car& rhs)
     trunkCapacity == rhs.trunkCapacity &&
     pricePerDay == pricePerDay);
 }
+
