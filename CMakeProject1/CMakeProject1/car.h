@@ -1,14 +1,16 @@
 #include <string>
 
-class  Car
+class Car
 {
 public:
-	Car(const std::string manufacterer_,
-		const std::string model_,
-		const int passengerCapacity_,
-		const int trunkCapacity_,
-		const int pricePerDay_);
+	Car(const std::string& manufacterer_,
+		const std::string& model_,
+		int passengerCapacity_,
+		int trunkCapacity_,
+		int pricePerDay_);
 	void showOff();
+
+    bool operator== (const Car& rhs);
 
 private:
 	const std::string manufacterer;
