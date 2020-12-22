@@ -2,19 +2,20 @@
 
 #include <iostream>
 #include <vector>
-#include "car.h"
-#include "exceptions.h"
 
-class Baza
+#include "exceptions.h"
+#include "abstractBase.h"
+
+class Baza: public AbstractBase
 {
 public:
 
 	//Baza();
 
-	void Add(Car car);
-	void Rent(Car car);
-	void Return(Car car);
-  void Present();
+	void Add(Car car) override;
+	void Rent(Car car) override;
+	void Return(Car car) override;
+	void Present() override;
   
 	int Search(Car& car);
 

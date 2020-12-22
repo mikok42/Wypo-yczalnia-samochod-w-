@@ -106,6 +106,7 @@ void Baza::Present()
 	for (int i = 0; i <availableCarVec.size(); i++)
 	{
 		availableCarVec[i].showOff();
+		std::cout<<std::endl;
 	}
 }
 
