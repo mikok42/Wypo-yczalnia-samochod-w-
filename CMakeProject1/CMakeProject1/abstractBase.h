@@ -12,6 +12,7 @@ public:
 	virtual void Rent(Car car) {};
 	virtual void Return(Car car) {};
 	virtual void Present() {};
+	virtual int Search(Car& car) { return 0; };
 
 
 };

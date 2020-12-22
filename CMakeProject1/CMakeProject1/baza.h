@@ -17,7 +17,7 @@ public:
 	void Return(Car car) override;
 	void Present() override;
   
-	int Search(Car& car);
+	int Search(Car& car) override;
 
 	void Remove(std::vector<Car> removeFrom, Car car);
 

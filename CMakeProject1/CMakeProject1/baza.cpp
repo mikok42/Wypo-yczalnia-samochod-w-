@@ -103,6 +103,7 @@ void Baza::Remove(std::vector<Car> removeFrom, Car car)
 
 void Baza::Present()
 {
+	std::cout << "availible cars: \n \n";
 	for (int i = 0; i <availableCarVec.size(); i++)
 	{
 		availableCarVec[i].showOff();

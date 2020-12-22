@@ -49,3 +49,8 @@ bool Car::operator== (const Car& rhs)
     pricePerDay == pricePerDay);
 }
 
+std::ostream& operator<< (std::ostream& os, const Car& car)
+{
+	os << car.manufacterer << " " << car.model << " " << car.passengerCapacity << " " << car.pricePerDay << " " << car.trunkCapacity << std::endl;
+	return os;
+}

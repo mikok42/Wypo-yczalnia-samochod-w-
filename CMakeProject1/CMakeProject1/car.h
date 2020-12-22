@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 
 
 
@@ -18,6 +19,8 @@ public:
 	Car& operator= (const Car& car);
 
 	friend bool compare(Car candidate, Car target);
+
+	friend std::ostream& operator<<(std::ostream& os, const Car& car);
 
     bool operator== (const Car& rhs);
 
