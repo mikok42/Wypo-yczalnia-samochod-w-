@@ -9,7 +9,6 @@ Car::Car(const std::string& manufacterer_,
 	int pricePerDay_):
 	manufacterer (std::move(manufacterer_)),
 	model (std::move(model_)),
-
 	passengerCapacity(passengerCapacity_),
 	trunkCapacity(trunkCapacity_),
 	pricePerDay(pricePerDay_)

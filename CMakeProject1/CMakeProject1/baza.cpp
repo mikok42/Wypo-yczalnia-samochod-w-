@@ -14,10 +14,8 @@ Baza::Baza()
 
 using namespace std;
 
-void Baza::Add(Car car)
 
 int Baza::Find(std::vector<Car> whereToLook, Car car)
-
 {
 	for (int i = 0; i < whereToLook.size(); i++)
 	{

@@ -7,11 +7,11 @@
 class  Car
 {
 public:
-	Car( std::string manufacterer_,
-		 std::string model_,
-		 int passengerCapacity_,
-		 int trunkCapacity_,
-		 int pricePerDay_);
+	Car(const std::string& manufacterer_,
+		const std::string& model_,
+		int passengerCapacity_,
+		int trunkCapacity_,
+		int pricePerDay_);
 
 	void showOff();
 	
